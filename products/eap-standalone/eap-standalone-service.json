@@ -1,0 +1,30 @@
+{
+   "kind":"Service",
+   "apiVersion":"v1beta3",
+   "metadata":{
+      "name":"eap-standalone",
+      "labels":{
+         "name":"eap-standalone"
+      }
+   },
+   "spec":{
+      "ports": [
+        {
+          "name":"management",
+          "port":9999,
+          "targetPort":9999,
+          "protocol":"TCP"
+        },
+        {
+          "name":"console",
+          "port":9990,
+          "targetPort":9990,
+          "protocol":"TCP"
+        }
+      ],
+      "selector":{
+         "name":"eap-standalone"
+      },
+      "portalIP": "10.254.0.5"
+   }
+}

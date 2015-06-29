@@ -1,0 +1,24 @@
+{
+   "kind":"Service",
+   "apiVersion":"v1beta3",
+   "metadata":{
+      "name":"eap-host-counter",
+      "labels":{
+         "name":"eap-host-counter"
+      }
+   },
+   "spec":{
+      "ports": [
+        {
+          "name":"management",
+          "port":9999,
+          "targetPort":9999,
+          "protocol":"TCP"
+        }
+      ],
+      "portalIP":"10.254.0.14",
+      "selector":{
+         "name":"eap-host-counter"
+      }
+   }
+}

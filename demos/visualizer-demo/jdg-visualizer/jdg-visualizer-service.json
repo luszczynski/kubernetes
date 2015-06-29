@@ -1,0 +1,35 @@
+{
+   "kind":"Service",
+   "apiVersion":"v1beta3",
+   "metadata":{
+      "name":"jdg-visualizer",
+      "labels":{
+         "name":"jdg-visualizer"
+      }
+   },
+   "spec":{
+      "ports": [
+        {
+          "name":"jdg",
+          "port":11222,
+          "targetPort":11222,
+          "protocol":"TCP"
+        },
+        {
+          "name":"management",
+          "port":9999,
+          "targetPort":9999,
+          "protocol":"TCP"
+        },
+        {
+          "name":"jboss",
+          "port":8080,
+          "targetPort":8080,
+          "protocol":"TCP"
+        }
+      ],
+      "selector":{
+         "name":"jdg-visualizer"
+      }
+   }
+}

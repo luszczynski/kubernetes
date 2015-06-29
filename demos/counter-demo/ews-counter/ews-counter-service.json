@@ -1,0 +1,30 @@
+{
+   "kind":"Service",
+   "apiVersion":"v1beta3",
+   "metadata":{
+      "name":"ews-counter",
+      "labels":{
+         "name":"ews-counter"
+      }
+   },
+   "spec":{
+      "ports": [
+        {
+          "name":"apache",
+          "port":80,
+          "targetPort":80,
+          "protocol":"TCP"
+        },
+        {
+          "name":"mod-cluster",
+          "port":6666,
+          "targetPort":6666,
+          "protocol":"TCP"
+        }
+      ],
+      "portalIP":"10.254.0.13",
+      "selector":{
+         "name":"ews-counter"
+      }
+   }
+}

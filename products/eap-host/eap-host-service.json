@@ -1,0 +1,24 @@
+{
+   "kind":"Service",
+   "apiVersion":"v1beta3",
+   "metadata":{
+      "name":"eap-host",
+      "labels":{
+         "name":"eap-host"
+      }
+   },
+   "spec":{
+      "ports": [
+        {
+          "name":"management",
+          "port":9999,
+          "targetPort":9999,
+          "protocol":"TCP"
+        }
+      ],
+      "portalIP":"10.254.0.11",
+      "selector":{
+         "name":"eap-host"
+      }
+   }
+}

@@ -1,0 +1,23 @@
+{
+   "kind":"Service",
+   "apiVersion":"v1beta3",
+   "metadata":{
+      "name":"nexus",
+      "labels":{
+         "name":"nexus"
+      }
+   },
+   "spec":{
+      "ports": [
+        {
+          "name":"nexus",
+          "port":8081,
+          "targetPort":8081,
+          "protocol":"TCP"
+        }
+      ],
+      "selector":{
+         "name":"nexus"
+      }
+   }
+}
